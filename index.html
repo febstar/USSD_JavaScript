@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <script>
+    let bankName = ''
+    let ussd = +prompt('Dial Your Mobile banking code here')
+    if (ussd == 737) {
+        bankName = 'GT BANK'
+    }
+    if (ussd == 894) {
+        bankName = 'FIRST BANK'
+    }
+    if (ussd == 901) {
+        bankName = 'ACCESS BANK'
+    }
+    if (ussd == 945) {
+        bankName = 'ALAT BANK'
+    }
+    if (ussd == 326) {
+        bankName = 'ECO BANK'
+    }
+    if (ussd == 770) {
+        bankName = 'FIDELITY BANK'
+    }
+    if (ussd == 329) {
+        bankName = 'FCMB'
+    }
+    if (ussd == 745) {
+        bankName = 'HERITAGE BANK'
+    }
+    if (ussd == 966) {
+        bankName = 'Zenith BANK'
+    }
+    if (ussd == 826) {
+        bankName = 'UNION BANK'
+    }
+    if (ussd == 919) {
+        bankName = 'UBA'
+    }
+    if (ussd == 822) {
+        bankName = 'Sterling BANK'
+    }
+    let start = +prompt(`Welcome to ${bankName} USSD Banking\n1>Quick Banking\n2>Open Account\n3>Loans\n4>${bankName} app\n5>Remita`)
+    if (start == 1) {
+        let quickBank = +prompt('1>Transfer\n2>Check Balance\n3>Airtime\n4>Card Request')
+        if (quickBank == 1) {
+            let transF = +prompt('1>Same Bank\n2>Different Bank')
+            if (transF == 1) {
+                let accountNum = prompt('Provide Account Number')
+                let sendMon = prompt('How much do you want to send?')
+                let done = confirm(`Transfer $${sendMon} to ${accountNum}(${bankName})`)
+                if (confirm == true) {
+                    alert('Successful!!!')
+                }
+                else {
+                    alert('Cancelled')
+                }
+
+            }
+            if (transF == 2) {
+                let accountNum = prompt('Provide Account Number')
+                let bAnks = prompt('Bank')
+                let sendMon = prompt('How much do you want to send?')
+                let done = confirm(`Transfer $${sendMon} to ${accountNum}(${bAnks})`)
+                if (confirm == true) {
+                    alert('Successful!!!')
+                }
+                else {
+                    alert('Cancelled')
+                }
+            }
+        }
+        if (quickBank == 2) {
+            alert('Account Balance is unavailable')
+        }
+        if (quickBank == 3) {
+            let phoneNum = prompt('Please provide phone number')
+            let network = prompt('Please provide network provider')
+            let credit = +prompt('How much would you be send?')
+
+
+            let con = confirm(`Buy Airtime of $${credit} to ${phoneNum} of ${network}?`)
+            if (con == true) {
+                alert(`Successful!!!`)
+            }
+            else {
+                alert('Cancelled!!!')
+            }
+        }
+        if (quickBank == 4) {
+            alert('Visit Bank FOr Card Collection')
+        }
+
+    }
+    if (start == 2) {
+        let newAccount = prompt('Please Provide Your Full Name')
+        let doTi = confirm(`Creating account with ${bankName} under ${newAccount}`)
+        if (doTi == true) {
+            alert(`Visit nearest ${bankName} to complete registation process`)
+        }
+        else {
+            alert('Cancelled!')
+        }
+    }if (start == 3) {
+        alert('ineligible for loans at this time')
+    }if (start == 4) {
+        alert('Go to the Playstore or Appstore to Downlad the mobile banking app')
+    }if (start == 5) {
+        let Remita = prompt('Please key in your remita number')
+        if (Remita == null) {
+            alert('can not be empty!!!')
+        }
+        else {
+            let Pay = confirm(`To pay $500 to remita number: ${Remita}`)
+            if (confirm == true) {
+                alert('successful!!!')
+            }
+            else {
+                alert('Cancelled')
+            }
+        }
+    }
+</script>
+</body>
+</html>
